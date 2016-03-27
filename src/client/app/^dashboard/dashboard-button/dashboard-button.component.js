@@ -28,7 +28,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 DashboardButtonComponent = __decorate([
                     core_1.Component({
                         selector: 'my-dashboard-button',
-                        template: "\n  <button class=\"dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect\n      mdl-button--accent\">{{speaker.name}}</button>\n  ",
+                        template: "\n  <button class=\"dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect\">{{speaker.name}}</button>\n  ",
                         styleUrls: ['app/^dashboard/dashboard-button/dashboard-button.component.css']
                     }), 
                     __metadata('design:paramtypes', [])

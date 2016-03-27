@@ -35,11 +35,12 @@
 }
 
 .mdl-layout__header-row {
-    height: 56px;
-    padding: 0 16px 0 72px;
-    padding-left: 8px;
-    background-color: #222;
-    background-color: #673AB7;
+  height: 56px;
+  padding: 0 16px 0 72px;
+  padding-left: 8px;
+  background-color: #222;
+  background-color: #673AB7;
+  background: #0033FF;
 }
 
 #reset-button {

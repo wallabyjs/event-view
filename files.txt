@@ -43,26 +43,26 @@ README.md
           dashboard-button.component.css
           dashboard-button.component.ts
           index.ts
-      ^vehicles/
+      ^sessions/
         index.ts
-        vehicle-button
-        vehicles.component.ts
-        ^vehicle/
+        session-button
+        sessions.component.ts
+        ^session/
           index.ts
-          vehicle.component.html
-          vehicle.component.ts
-        ^vehicle-list/
+          session.component.html
+          session.component.ts
+        ^session-list/
           index.ts
-          vehicle-list.component.css
-          vehicle-list.component.html
-          vehicle-list.component.ts
+          session-list.component.css
+          session-list.component.html
+          session-list.component.ts
         common/
           index.ts
-          vehicle.service.ts
-        vehicle-button/
+          session.service.ts
+        session-button/
           index.ts
-          vehicle-button.component.html
-          vehicle-button.component.ts
+          session-button.component.html
+          session-button.component.ts
       common/
         config.ts
         entity.service.ts

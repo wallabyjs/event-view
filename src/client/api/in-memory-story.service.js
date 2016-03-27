@@ -95,7 +95,7 @@ System.register([], function(exports_1, context_1) {
                             "side": "light"
                         }
                     ];
-                    var vehicles = [
+                    var sessions = [
                         {
                             "id": 30,
                             "name": "Millennium Falcon",
@@ -152,7 +152,7 @@ System.register([], function(exports_1, context_1) {
                             "type": "land"
                         }
                     ];
-                    return { speakers: speakers, vehicles: vehicles };
+                    return { speakers: speakers, sessions: sessions };
                 };
                 return InMemoryStoryService;
             }());

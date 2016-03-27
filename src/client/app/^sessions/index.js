@@ -1,4 +1,4 @@
-System.register(['./^vehicle', './^vehicle-list', './common', './vehicles.component'], function(exports_1, context_1) {
+System.register(['./^session', './^session-list', './common', './sessions.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
@@ -10,17 +10,17 @@ System.register(['./^vehicle', './^vehicle-list', './common', './vehicles.compon
     }
     return {
         setters:[
-            function (_vehicle_1_1) {
-                exportStar_1(_vehicle_1_1);
+            function (_session_1_1) {
+                exportStar_1(_session_1_1);
             },
-            function (_vehicle_list_1_1) {
-                exportStar_1(_vehicle_list_1_1);
+            function (_session_list_1_1) {
+                exportStar_1(_session_list_1_1);
             },
             function (common_1_1) {
                 exportStar_1(common_1_1);
             },
-            function (vehicles_component_1_1) {
-                exportStar_1(vehicles_component_1_1);
+            function (sessions_component_1_1) {
+                exportStar_1(sessions_component_1_1);
             }],
         execute: function() {
         }

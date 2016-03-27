@@ -1,15 +1,15 @@
 <article class="template animated slideInRight">
-  <div *ngIf="vehicle">
-    <h4>{{editVehicle.name | uppercase}} details</h4>
+  <div *ngIf="session">
+    <h4>{{editSession.name | uppercase}} details</h4>
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <label class="mdl-textfield__label" for="nametext">Name</label>
-      <input type="text" id="nametext" class="mdl-textfield__input" [(ngModel)]="editVehicle.name" />
+      <input type="text" id="nametext" class="mdl-textfield__input" [(ngModel)]="editSession.name" />
     </div>
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <label class="mdl-textfield__label" for="typetext">Type</label>
-      <input type="text" id="typetext" class="mdl-textfield__input" [(ngModel)]="editVehicle.type" />
+      <input type="text" id="typetext" class="mdl-textfield__input" [(ngModel)]="editSession.type" />
     </div>
 
     <div>

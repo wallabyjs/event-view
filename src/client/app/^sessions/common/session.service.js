@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/http', '../../common'], function(exp
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, http_1, common_1;
-    var vehiclesUrl, VehicleService;
+    var sessionsUrl, SessionService;
     return {
         setters:[
             function (core_1_1) {
@@ -24,68 +24,68 @@ System.register(['angular2/core', 'angular2/http', '../../common'], function(exp
                 common_1 = common_1_1;
             }],
         execute: function() {
-            vehiclesUrl = common_1.CONFIG.baseUrls.sessions;
-            VehicleService = (function () {
-                function VehicleService(_http, _exceptionService, _messageService, _spinnerService) {
+            sessionsUrl = common_1.CONFIG.baseUrls.sessions;
+            SessionService = (function () {
+                function SessionService(_http, _exceptionService, _messageService, _spinnerService) {
                     var _this = this;
                     this._http = _http;
                     this._exceptionService = _exceptionService;
                     this._messageService = _messageService;
                     this._spinnerService = _spinnerService;
                     this.onDbReset = this._messageService.state;
-                    this._messageService.state.subscribe(function (state) { return _this.getVehicles(); });
+                    this._messageService.state.subscribe(function (state) { return _this.getSessions(); });
                 }
-                VehicleService.prototype.addVehicle = function (vehicle) {
+                SessionService.prototype.addSession = function (session) {
                     var _this = this;
-                    var body = JSON.stringify(vehicle);
+                    var body = JSON.stringify(session);
                     this._spinnerService.show();
                     return this._http
-                        .post("" + vehiclesUrl, body)
+                        .post("" + sessionsUrl, body)
                         .map(function (res) { return res.json().data; })
                         .catch(this._exceptionService.catchBadResponse)
                         .finally(function () { return _this._spinnerService.hide(); });
                 };
-                VehicleService.prototype.deleteVehicle = function (vehicle) {
+                SessionService.prototype.deleteSession = function (session) {
                     var _this = this;
                     this._spinnerService.show();
                     return this._http
-                        .delete(vehiclesUrl + "/" + vehicle.id)
+                        .delete(sessionsUrl + "/" + session.id)
                         .catch(this._exceptionService.catchBadResponse)
                         .finally(function () { return _this._spinnerService.hide(); });
                 };
-                VehicleService.prototype.getVehicles = function () {
+                SessionService.prototype.getSessions = function () {
                     var _this = this;
                     this._spinnerService.show();
-                    return this._http.get(vehiclesUrl)
+                    return this._http.get(sessionsUrl)
                         .map(function (response) { return response.json().data; })
                         .catch(this._exceptionService.catchBadResponse)
                         .finally(function () { return _this._spinnerService.hide(); });
                 };
-                VehicleService.prototype.getVehicle = function (id) {
+                SessionService.prototype.getSession = function (id) {
                     var _this = this;
                     this._spinnerService.show();
-                    return this._http.get(vehiclesUrl + "/" + id)
+                    return this._http.get(sessionsUrl + "/" + id)
                         .map(function (response) { return response.json().data; })
                         .catch(this._exceptionService.catchBadResponse)
                         .finally(function () { return _this._spinnerService.hide(); });
                 };
-                VehicleService.prototype.updateVehicle = function (vehicle) {
+                SessionService.prototype.updateSession = function (session) {
                     var _this = this;
-                    var body = JSON.stringify(vehicle);
+                    var body = JSON.stringify(session);
                     this._spinnerService.show();
                     return this._http
-                        .put(vehiclesUrl + "/" + vehicle.id, body)
+                        .put(sessionsUrl + "/" + session.id, body)
                         .catch(this._exceptionService.catchBadResponse)
                         .finally(function () { return _this._spinnerService.hide(); });
                 };
-                VehicleService = __decorate([
+                SessionService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http, common_1.ExceptionService, common_1.MessageService, common_1.SpinnerService])
-                ], VehicleService);
-                return VehicleService;
+                ], SessionService);
+                return SessionService;
             }());
-            exports_1("VehicleService", VehicleService);
+            exports_1("SessionService", SessionService);
         }
     }
 });
-//# sourceMappingURL=vehicle.service.js.map
+//# sourceMappingURL=session.service.js.map

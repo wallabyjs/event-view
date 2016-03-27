@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/router', '../../common'], function(e
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, common_1;
-    var VehicleButtonComponent;
+    var SessionButtonComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -24,27 +24,27 @@ System.register(['angular2/core', 'angular2/router', '../../common'], function(e
                 common_1 = common_1_1;
             }],
         execute: function() {
-            VehicleButtonComponent = (function () {
-                function VehicleButtonComponent() {
+            SessionButtonComponent = (function () {
+                function SessionButtonComponent() {
                 }
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
-                ], VehicleButtonComponent.prototype, "vehicle", void 0);
-                VehicleButtonComponent = __decorate([
+                ], SessionButtonComponent.prototype, "session", void 0);
+                SessionButtonComponent = __decorate([
                     core_1.Component({
-                        selector: 'ev-vehicle-button',
-                        templateUrl: './app/^vehicles/vehicle-button/vehicle-button.component.html',
+                        selector: 'ev-session-button',
+                        templateUrl: './app/^sessions/session-button/session-button.component.html',
                         styles: ["\n    .mdl-card__title-text {font-size: 16px;}\n    .mdl-card {min-height: 60px;}\n  "],
                         directives: [router_1.ROUTER_DIRECTIVES],
                         pipes: [common_1.InitCapsPipe]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], VehicleButtonComponent);
-                return VehicleButtonComponent;
+                ], SessionButtonComponent);
+                return SessionButtonComponent;
             }());
-            exports_1("VehicleButtonComponent", VehicleButtonComponent);
+            exports_1("SessionButtonComponent", SessionButtonComponent);
         }
     }
 });
-//# sourceMappingURL=vehicle-button.component.js.map
+//# sourceMappingURL=session-button.component.js.map

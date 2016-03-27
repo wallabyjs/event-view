@@ -3,65 +3,65 @@ import { Http, Response } from 'angular2/http';
 
 import { CONFIG, ExceptionService, MessageService, SpinnerService } from '../../common';
 
-let vehiclesUrl = CONFIG.baseUrls.sessions;
+let sessionsUrl = CONFIG.baseUrls.sessions;
 
-export interface Vehicle {
+export interface Session {
   id: number;
   name: string;
   type: string;
 }
 
 @Injectable()
-export class VehicleService {
+export class SessionService {
   onDbReset = this._messageService.state;
 
   constructor(private _http: Http,
     private _exceptionService: ExceptionService,
     private _messageService: MessageService,
     private _spinnerService: SpinnerService) {
-    this._messageService.state.subscribe(state => this.getVehicles());
+    this._messageService.state.subscribe(state => this.getSessions());
   }
 
-  addVehicle(vehicle: Vehicle) {
-    let body = JSON.stringify(vehicle);
+  addSession(session: Session) {
+    let body = JSON.stringify(session);
     this._spinnerService.show();
     return this._http
-      .post(`${vehiclesUrl}`, body)
+      .post(`${sessionsUrl}`, body)
       .map(res => res.json().data)
       .catch(this._exceptionService.catchBadResponse)
       .finally(() => this._spinnerService.hide());
   }
 
-  deleteVehicle(vehicle: Vehicle) {
+  deleteSession(session: Session) {
     this._spinnerService.show();
     return this._http
-      .delete(`${vehiclesUrl}/${vehicle.id}`)
+      .delete(`${sessionsUrl}/${session.id}`)
       .catch(this._exceptionService.catchBadResponse)
       .finally(() => this._spinnerService.hide());
   }
 
-  getVehicles() {
+  getSessions() {
     this._spinnerService.show();
-    return this._http.get(vehiclesUrl)
-      .map((response: Response) => <Vehicle[]>response.json().data)
+    return this._http.get(sessionsUrl)
+      .map((response: Response) => <Session[]>response.json().data)
       .catch(this._exceptionService.catchBadResponse)
       .finally(() => this._spinnerService.hide());
   }
 
-  getVehicle(id: number) {
+  getSession(id: number) {
     this._spinnerService.show();
-    return this._http.get(`${vehiclesUrl}/${id}`)
+    return this._http.get(`${sessionsUrl}/${id}`)
       .map((response: Response) => response.json().data)
       .catch(this._exceptionService.catchBadResponse)
       .finally(() => this._spinnerService.hide());
   }
 
-  updateVehicle(vehicle: Vehicle) {
-    let body = JSON.stringify(vehicle);
+  updateSession(session: Session) {
+    let body = JSON.stringify(session);
     this._spinnerService.show();
 
     return this._http
-      .put(`${vehiclesUrl}/${vehicle.id}`, body)
+      .put(`${sessionsUrl}/${session.id}`, body)
       .catch(this._exceptionService.catchBadResponse)
       .finally(() => this._spinnerService.hide());
   }

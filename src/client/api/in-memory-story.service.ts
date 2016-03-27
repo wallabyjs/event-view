@@ -87,7 +87,7 @@ export class InMemoryStoryService {
       }
     ];
 
-    let vehicles = [
+    let sessions = [
       {
         "id": 30,
         "name": "Millennium Falcon",
@@ -145,6 +145,6 @@ export class InMemoryStoryService {
       }
     ]
 
-    return { speakers, vehicles };
+    return { speakers, sessions };
   }
 }

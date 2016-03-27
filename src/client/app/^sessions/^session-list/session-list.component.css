@@ -1,8 +1,8 @@
-.vehicles {
+.sessions {
   list-style-type: none;
   padding: 0;
 }
 
-*.vehicles li {
+*.sessions li {
   padding: 4px;
 }

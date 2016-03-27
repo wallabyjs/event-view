@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'angular2/router', 'rxjs/Rx', 'a2-in-memory-web-api/core', '../api/in-memory-story.service', './^speakers', './^dashboard', './layout/nav.component', './^vehicles', './common'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'angular2/router', 'rxjs/Rx', 'a2-in-memory-web-api/core', '../api/in-memory-story.service', './^speakers', './^dashboard', './layout/nav.component', './^sessions', './common'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', 'rxjs/Rx',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, router_1, core_2, in_memory_story_service_1, _speakers_1, _dashboard_1, nav_component_1, _vehicles_1, common_1;
+    var core_1, http_1, router_1, core_2, in_memory_story_service_1, _speakers_1, _dashboard_1, nav_component_1, _sessions_1, common_1;
     var AppComponent;
     return {
         setters:[
@@ -39,8 +39,8 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', 'rxjs/Rx',
             function (nav_component_1_1) {
                 nav_component_1 = nav_component_1_1;
             },
-            function (_vehicles_1_1) {
-                _vehicles_1 = _vehicles_1_1;
+            function (_sessions_1_1) {
+                _sessions_1 = _sessions_1_1;
             },
             function (common_1_1) {
                 common_1 = common_1_1;
@@ -67,7 +67,7 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', 'rxjs/Rx',
                     }),
                     router_1.RouteConfig([
                         { path: '/dashboard', name: 'Dashboard', component: _dashboard_1.DashboardComponent, useAsDefault: true },
-                        { path: '/sessions/...', name: 'Sessions', component: _vehicles_1.VehiclesComponent },
+                        { path: '/sessions/...', name: 'Sessions', component: _sessions_1.SessionsComponent },
                         { path: '/speakers/...', name: 'Speakers', component: _speakers_1.SpeakersComponent },
                     ]), 
                     __metadata('design:paramtypes', [])

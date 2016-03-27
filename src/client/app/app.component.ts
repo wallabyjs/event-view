@@ -8,7 +8,7 @@ import { InMemoryStoryService } from '../api/in-memory-story.service';
 import { SpeakersComponent, SpeakerService } from './^speakers';
 import { DashboardComponent } from './^dashboard';
 import { NavComponent } from './layout/nav.component';
-import { VehiclesComponent } from './^vehicles';
+import { SessionsComponent } from './^sessions';
 import { BLOCK_PROVIDERS, ModalComponent, SpinnerComponent, ToastComponent } from './common';
 
 @Component({
@@ -28,7 +28,7 @@ import { BLOCK_PROVIDERS, ModalComponent, SpinnerComponent, ToastComponent } fro
 })
 @RouteConfig([
   { path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
-  { path: '/sessions/...', name: 'Sessions', component: VehiclesComponent },
+  { path: '/sessions/...', name: 'Sessions', component: SessionsComponent },
   { path: '/speakers/...', name: 'Speakers', component: SpeakersComponent },
 ])
 export class AppComponent { }

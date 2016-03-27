@@ -1,4 +1,4 @@
-System.register(['./vehicle-list.component'], function(exports_1, context_1) {
+System.register(['./session-button.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
@@ -10,8 +10,8 @@ System.register(['./vehicle-list.component'], function(exports_1, context_1) {
     }
     return {
         setters:[
-            function (vehicle_list_component_1_1) {
-                exportStar_1(vehicle_list_component_1_1);
+            function (session_button_component_1_1) {
+                exportStar_1(session_button_component_1_1);
             }],
         execute: function() {
         }

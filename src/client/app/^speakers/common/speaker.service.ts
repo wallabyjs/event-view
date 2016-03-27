@@ -8,7 +8,7 @@ let speakersUrl = CONFIG.baseUrls.speakers;
 export interface Speaker {
   id: number;
   name: string;
-  side: string;
+  twitter: string;
 }
 
 @Injectable()

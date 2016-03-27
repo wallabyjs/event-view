@@ -37,7 +37,7 @@ System.register(['angular2/core', 'angular2/router', '../common', '../speaker-bu
                     this.filteredSpeakers = this.speakers;
                 }
                 SpeakerListComponent.prototype.filterChanged = function (searchText) {
-                    this.filteredSpeakers = this._filterService.filter(searchText, ['id', 'name', 'side'], this.speakers);
+                    this.filteredSpeakers = this._filterService.filter(searchText, ['id', 'name', 'twitter'], this.speakers);
                 };
                 SpeakerListComponent.prototype.getSpeakers = function () {
                     var _this = this;

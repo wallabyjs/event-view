@@ -8,7 +8,7 @@ let sessionsUrl = CONFIG.baseUrls.sessions;
 export interface Session {
   id: number;
   name: string;
-  type: string;
+  level: string;
 }
 
 @Injectable()

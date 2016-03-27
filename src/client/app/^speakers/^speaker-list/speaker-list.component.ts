@@ -24,7 +24,7 @@ export class SpeakerListComponent implements OnDestroy, OnInit {
     private _filterService: FilterService) { }
 
   filterChanged(searchText: string) {
-    this.filteredSpeakers = this._filterService.filter(searchText, ['id', 'name', 'side'], this.speakers);
+    this.filteredSpeakers = this._filterService.filter(searchText, ['id', 'name', 'twitter'], this.speakers);
   }
 
   getSpeakers() {

@@ -9,9 +9,5 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
-  },
-  "files": [
-    "app/main.ts",
-    "typings.d.ts"
-  ]
+  }
 }

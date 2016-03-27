@@ -15,7 +15,7 @@ import { SessionService } from './common';
 })
 @RouteConfig([
   { path: '/', name: 'Sessions', component: SessionListComponent, useAsDefault: true },
-	{ path: '/list/:id', name: 'Sessions', component: SessionListComponent	},
-	{ path: '/:id', name: 'Session', component: SessionComponent }
+  { path: '/list/:id', name: 'Sessions', component: SessionListComponent },
+  { path: '/:id', name: 'Session', component: SessionComponent }
 ])
 export class SessionsComponent { }

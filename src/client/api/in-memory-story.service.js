@@ -17,85 +17,142 @@ System.register([], function(exports_1, context_1) {
                         {
                             "id": 11,
                             "name": "Chewbacca",
-                            "side": "light"
+                            "twitter": "@im_chewy"
                         },
                         {
                             "id": 12,
                             "name": "Rey",
-                            "side": "light"
+                            "twitter": "@rey"
                         },
                         {
                             "id": 13,
                             "name": "Finn (FN2187)",
-                            "side": "light"
+                            "twitter": "@finn"
                         },
                         {
                             "id": 14,
                             "name": "Han Solo",
-                            "side": "light"
+                            "twitter": "@i_know"
                         },
                         {
                             "id": 15,
                             "name": "Leia Organa",
-                            "side": "light"
+                            "twitter": "@organa"
                         },
                         {
                             "id": 16,
                             "name": "Luke Skywalker",
-                            "side": "light"
+                            "twitter": "@chosen_one_son"
                         },
                         {
                             "id": 17,
                             "name": "Poe Dameron",
-                            "side": "light"
+                            "twitter": "@i_am_poe"
                         },
                         {
                             "id": 18,
                             "name": "Kylo Ren",
-                            "side": "dark"
+                            "twitter": "@daddy_issues"
                         },
                         {
                             "id": 19,
                             "name": "Supreme Commander Snoke",
-                            "side": "dark"
+                            "twitter": "@snoker"
                         },
                         {
                             "id": 20,
                             "name": "R2-D2",
-                            "side": "light"
+                            "twitter": "@r2d2"
                         },
                         {
                             "id": 21,
                             "name": "BB8",
-                            "side": "light"
+                            "twitter": "@bb_eight"
                         },
                         {
                             "id": 22,
                             "name": "C-3PO",
-                            "side": "light"
+                            "twitter": "@goldy"
                         },
                         {
                             "id": 23,
                             "name": "Maz Kanata",
-                            "side": "light"
+                            "twitter": "@mazzzy"
                         },
                         {
                             "id": 24,
                             "name": "Captain Phasma",
-                            "side": "dark"
+                            "twitter": "@fazma"
                         },
                         {
                             "id": 25,
                             "name": "General Hux",
-                            "side": "dark"
+                            "twitter": "@hux"
                         },
                         {
                             "id": 26,
                             "name": "Lor San Tekka",
-                            "side": "light"
+                            "twitter": "@lor_san"
                         }
                     ];
                     var sessions = [
+                        {
+                            "id": 130,
+                            "name": "Angular 2 First Look",
+                            "level": "beginner"
+                        },
+                        {
+                            "id": 132,
+                            "name": "RxJS",
+                            "level": "beginner"
+                        },
+                        {
+                            "id": 133,
+                            "name": "Angular Material",
+                            "level": "beginner"
+                        },
+                        {
+                            "id": 134,
+                            "name": "Redux",
+                            "level": "beginner"
+                        },
+                        {
+                            "id": 135,
+                            "name": "React",
+                            "level": "beginner"
+                        },
+                        {
+                            "id": 136,
+                            "name": "TypeScript",
+                            "level": "beginner"
+                        },
+                        {
+                            "id": 137,
+                            "name": "ES2015",
+                            "level": "beginner"
+                        },
+                        {
+                            "id": 138,
+                            "name": "Mongo",
+                            "level": "beginner"
+                        },
+                        {
+                            "id": 139,
+                            "name": "Redis",
+                            "level": "beginner"
+                        },
+                        {
+                            "id": 140,
+                            "name": "Node",
+                            "level": "beginner"
+                        },
+                        {
+                            "id": 141,
+                            "name": "Express",
+                            "level": "beginner"
+                        }
+                    ];
+                    var rooms = [
                         {
                             "id": 30,
                             "name": "Millennium Falcon",

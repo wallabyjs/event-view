@@ -87,7 +87,7 @@ export class SpeakerComponent implements CanDeactivate, OnDestroy, OnInit {
     let id = +this._routeParams.get('id');
     if (id === 0) { return; };
     if (this.isAddMode()) {
-      this.speaker = <Speaker>{ name: '', side: 'dark' };
+      this.speaker = <Speaker>{ name: '', twitter: '' };
       this.editSpeaker = this._entityService.clone(this.speaker);
       return;
     }

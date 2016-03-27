@@ -3,82 +3,82 @@
     {
       "id": 11,
       "name": "Chewbacca",
-      "side": "light"
+      "twitter": "@im_chewy"
     },
     {
       "id": 12,
       "name": "Rey",
-      "side": "light"
+      "twitter": "@rey"
     },
     {
       "id": 13,
       "name": "Finn (FN2187)",
-      "side": "light"
+      "twitter": "@finn"
     },
     {
       "id": 14,
       "name": "Han Solo",
-      "side": "light"
+      "twitter": "@i_know"
     },
     {
       "id": 15,
       "name": "Leia Organa",
-      "side": "light"
+      "twitter": "@organa"
     },
     {
       "id": 16,
       "name": "Luke Skywalker",
-      "side": "light"
+      "twitter": "@chosen_one_son"
     },
     {
       "id": 17,
       "name": "Poe Dameron",
-      "side": "light"
+      "twitter": "@i_am_poe"
     },
     {
       "id": 18,
       "name": "Kylo Ren",
-      "side": "dark"
+      "twitter": "@daddy_issues"
     },
     {
       "id": 19,
       "name": "Supreme Commander Snoke",
-      "side": "dark"
+      "twitter": "@snoker"
     },
     {
       "id": 20,
       "name": "R2-D2",
-      "side": "light"
+      "twitter": "@r2d2"
     },
     {
       "id": 21,
       "name": "BB8",
-      "side": "light"
+      "twitter": "@bb_eight"
     },
     {
       "id": 22,
       "name": "C-3PO",
-      "side": "light"
+      "twitter": "@goldy"
     },
     {
       "id": 23,
       "name": "Maz Kanata",
-      "side": "light"
+      "twitter": "@mazzzy"
     },
     {
       "id": 24,
       "name": "Captain Phasma",
-      "side": "dark"
+      "twitter": "@fazma"
     },
     {
       "id": 25,
       "name": "General Hux",
-      "side": "dark"
+      "twitter": "@hux"
     },
     {
       "id": 26,
       "name": "Lor San Tekka",
-      "side": "light"
+      "twitter": "@lor_san"
     }
   ]
 }

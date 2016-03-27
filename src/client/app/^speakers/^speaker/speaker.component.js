@@ -100,7 +100,7 @@ System.register(['angular2/core', 'angular2/router', '../../common', '../common/
                     }
                     ;
                     if (this.isAddMode()) {
-                        this.speaker = { name: '', side: 'dark' };
+                        this.speaker = { name: '', twitter: '' };
                         this.editSpeaker = this._entityService.clone(this.speaker);
                         return;
                     }

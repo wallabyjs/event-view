@@ -1,0 +1,8 @@
+.vehicles {
+  list-style-type: none;
+  padding: 0;
+}
+
+*.vehicles li {
+  padding: 4px;
+}

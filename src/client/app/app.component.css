@@ -1,0 +1,18 @@
+.mdl-layout__content {
+  margin-top: 68px;
+}
+
+.page-content {
+  margin: 2em;
+}
+
+/*#spinner {
+  border-width: 8em;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -70px;
+  z-index: 9999;
+}
+*/

@@ -1,0 +1,38 @@
+{
+  "name": "event-view",
+  "version": "0.0.1",
+  "scripts": {
+    "postinstall": "npm run typings install",
+    "tsc": "tsc -p ./src/client",
+    "tsc:w": "tsc -p ./src/client -w",
+    "lint": "tslint src/**/*.ts",
+    "lite": "lite-server",
+    "start": "npm run tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "typings": "typings"
+  },
+  "dependencies": {
+    "a2-in-memory-web-api": "~0.1.0",
+    "angular2": "2.0.0-beta.12",
+    "systemjs": "0.19.24",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.6.6"
+  },
+  "devDependencies": {
+    "canonical-path": "0.0.2",
+    "concurrently": "^2.0.0",
+    "globby": "^4.0.0",
+    "gulp": "^3.9.0",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-util": "^3.0.7",
+    "jsdom": "^7.2.2",
+    "lite-server": "^2.1.0",
+    "lodash": "^4.0.0",
+    "mkdirp": "^0.5.1",
+    "q": "^1.4.1",
+    "typescript": "^1.8.9",
+    "typings": "^0.7.9"
+  }
+}

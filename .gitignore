@@ -1,0 +1,14 @@
+**/*.map
+app/**/*.js
+api/**/*.js
+in-memory-backend/**/*.js
+
+node_modules
+jspm_packages
+bower_components
+typings
+
+plnkr.html
+#plnkr.no-link.html
+
+npm-debug.log

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base href="/">
+
+  <title>Event View</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="assets/material.min.js"></script>
+  <link rel="stylesheet" href="assets/material.min.css">
+  <link rel="stylesheet" href="assets/sprite-av-white.css">
+  <link rel="stylesheet" href="assets/animate.css">
+  <link rel="stylesheet" href="assets/app.css">
+
+  <!-- IE required polyfills, in this exact order -->
+  <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+  <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+  <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
+  <!-- Angular polyfill required everywhere -->
+  <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="node_modules/rxjs/bundles/Rx.js"></script>
+  <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+  <script src="node_modules/angular2/bundles/router.dev.js"></script>
+  <script src="node_modules/angular2/bundles/http.dev.js"></script>
+
+  <script src="node_modules/a2-in-memory-web-api/web-api.js"></script>
+
+  <script>
+    // TODO: cli should auto-generate this on the fly
+    var packages = [
+      'app',
+      'app/^speakers',
+      'app/^speakers/^speaker',
+      'app/^speakers/^speaker-list',
+      'app/^speakers/speaker-button',
+      'app/^speakers/common',
+      'app/common',
+      'app/common/filter-text',
+      'app/common/modal',
+      'app/common/spinner',
+      'app/common/toast',
+      'app/^dashboard',
+      'app/^dashboard/dashboard-button',
+      'app/layout',
+      'app/^vehicles',
+      'app/^vehicles/^vehicle',
+      'app/^vehicles/^vehicle-list',
+      'app/^vehicles/common',
+      'app/^vehicles/vehicle-button'
+    ].reduce(function(barrelConfig, barrelName) {
+      barrelConfig[barrelName] = {
+        format: 'register',
+        defaultExtension: 'js',
+        main: 'index'
+      };
+      return barrelConfig;
+    }, {});
+
+    // Additions
+    packages.api=  {format: 'register',defaultExtension: 'js'};
+
+    System.config({packages: packages});
+
+    System.import('app/main')
+          .then(null, console.error.bind(console));
+  </script>
+
+</head>
+
+<body>
+  <ev-app>Loading Event View ...</ev-app>
+</body>
+
+</html>

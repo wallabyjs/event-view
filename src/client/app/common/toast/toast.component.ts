@@ -12,10 +12,10 @@ export class ToastComponent implements OnInit {
     title: '',
     message: 'May the Force be with You'
   };
+  private _toastElement: any;
+
   title: string;
   message: string;
-
-  private _toastElement: any;
 
   constructor(toastService: ToastService) {
     toastService.activate = this.activate.bind(this);

@@ -19,7 +19,6 @@ export class SessionListComponent implements OnDestroy, OnInit {
   filteredSessions = this.sessions;
   @ViewChild(FilterTextComponent) filterComponent: FilterTextComponent;
 
-
   constructor(
     private _filterService: FilterService,
     private _sessionService: SessionService) { }

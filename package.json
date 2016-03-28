@@ -5,7 +5,7 @@
     "postinstall": "npm run typings install",
     "tsc": "tsc -p ./src/client",
     "tsc:w": "tsc -p ./src/client -w",
-    "lint": "tslint src/**/*.ts",
+    "lint": "tslint ./src/client/**/*.ts -t verbose",
     "lite": "lite-server",
     "start": "npm run tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "typings": "typings"

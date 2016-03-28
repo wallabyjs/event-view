@@ -1,6 +1,6 @@
 import { Component, OnInit } from 'angular2/core';
 
-import { ToastService } from './toast.service'
+import { ToastService } from './toast.service';
 
 @Component({
   selector: 'toast',

@@ -1,7 +1,7 @@
 **/*.map
-app/**/*.js
-api/**/*.js
-in-memory-backend/**/*.js
+src/client/app/**/*.js
+src/client/api/**/*.js
+#src/client/in-memory-backend/**/*.js
 
 node_modules
 jspm_packages

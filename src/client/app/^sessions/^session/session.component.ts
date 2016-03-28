@@ -92,7 +92,7 @@ export class SessionComponent implements CanDeactivate, OnDestroy, OnInit {
     let id = +this._routeParams.get('id');
     if (id === 0) { return; };
     if (this.isAddMode()) {
-      this.session = <Session>{ name: '', type: '' };
+      this.session = <Session>{ name: '', level: '' };
       this.editSession = this._entityService.clone(this.session);
       return;
     }

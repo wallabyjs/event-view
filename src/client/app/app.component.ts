@@ -5,11 +5,9 @@ import 'rxjs/Rx'; // load the full rxjs
 
 import { InMemoryBackendConfig, InMemoryBackendService, SEED_DATA } from 'a2-in-memory-web-api/core';
 import { InMemoryStoryService } from '../api/in-memory-story.service';
-import { SpeakersComponent, SpeakerService } from './^speakers';
-import { DashboardComponent } from './^dashboard';
-import { NavComponent } from './layout/nav.component';
-import { SessionsComponent } from './^sessions';
-import { BLOCK_PROVIDERS, ModalComponent, SpinnerComponent, ToastComponent } from './common';
+import { NavComponent } from './nav';
+import { SpeakerService } from './speakers';
+import { BLOCK_PROVIDERS, ModalComponent, SpinnerComponent, ToastComponent } from './shared';
 
 @Component({
   selector: 'ev-app',
@@ -27,8 +25,22 @@ import { BLOCK_PROVIDERS, ModalComponent, SpinnerComponent, ToastComponent } fro
   ]
 })
 @RouteConfig([
-  { path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
-  { path: '/sessions/...', name: 'Sessions', component: SessionsComponent },
-  { path: '/speakers/...', name: 'Speakers', component: SpeakersComponent },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    loader: () => window['System'].import('app/+dashboard')
+      .then((module: any) => module.DashboardComponent),
+    useAsDefault: true
+  }, {
+    path: '/sessions/...',
+    name: 'Sessions',
+    loader: () => window['System'].import('app/+sessions')
+      .then((module: any) => module.SessionsComponent)
+  }, {
+    path: '/speakers/...',
+    name: 'Speakers',
+    loader: () => window['System'].import('app/+speakers')
+      .then((module: any) => module.SpeakersComponent),
+  }
 ])
 export class AppComponent { }

@@ -40,7 +40,7 @@ import { BLOCK_PROVIDERS, ModalComponent, SpinnerComponent, ToastComponent } fro
     path: '/speakers/...',
     name: 'Speakers',
     loader: () => window['System'].import('app/+speakers')
-      .then((module: any) => module.SpeakersComponent),
+      .then((module: any) => module.SpeakersComponent)
   }
 ])
 export class AppComponent { }

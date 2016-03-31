@@ -19,12 +19,12 @@ import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
     path: '/list/:id',
     name: 'Speakers',
     loader: () => window['System'].import('app/+speakers/+speaker-list')
-      .then((module: any) => module.SpeakerListComponent),
+      .then((module: any) => module.SpeakerListComponent)
   }, {
     path: '/:id',
     name: 'Speaker',
     loader: () => window['System'].import('app/+speakers/+speaker')
-      .then((module: any) => module.SpeakerComponent),
+      .then((module: any) => module.SpeakerComponent)
   }
 ])
 export class SpeakersComponent { }

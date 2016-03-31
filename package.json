@@ -7,7 +7,9 @@
     "tsc:w": "tsc -p ./src/client -w",
     "lint": "tslint ./src/client/**/*.ts -t verbose",
     "lite": "lite-server",
+    "copy": "mkdir -p ./dist/assets && cp ./src/client/assets/*.* ./dist/assets/ && cp ./src/client/index.html ./dist && cp ./src/client/favicon.ico ./dist",
     "start": "npm run tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "prod": "npm run copy && npm start",
     "typings": "typings"
   },
   "dependencies": {
@@ -27,10 +29,16 @@
     "gulp": "^3.9.0",
     "gulp-task-listing": "^1.0.1",
     "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.3.4",
+    "jasmine-spec-reporter": "^2.4.0",
     "jsdom": "^7.2.2",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-jasmine": "^0.3.6",
     "lite-server": "^2.1.0",
     "lodash": "^4.0.0",
     "mkdirp": "^0.5.1",
+    "protractor": "^3.0.0",
     "q": "^1.4.1",
     "typescript": "^1.8.9",
     "typings": "^0.7.9"

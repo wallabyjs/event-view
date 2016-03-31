@@ -2,6 +2,7 @@
 src/client/app/**/*.js
 src/client/api/**/*.js
 #src/client/in-memory-backend/**/*.js
+dist
 
 node_modules
 jspm_packages

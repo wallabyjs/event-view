@@ -7,9 +7,7 @@
     "tsc:w": "tsc -p ./src/client -w",
     "lint": "tslint ./src/client/**/*.ts -t verbose",
     "lite": "lite-server",
-    "copy": "mkdir -p ./dist/assets && cp ./src/client/assets/*.* ./dist/assets/ && cp ./src/client/index.html ./dist && cp ./src/client/favicon.ico ./dist",
     "start": "npm run tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "prod": "npm run copy && npm start",
     "typings": "typings"
   },
   "dependencies": {

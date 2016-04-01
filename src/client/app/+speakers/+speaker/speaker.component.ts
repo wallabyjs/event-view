@@ -2,8 +2,13 @@ import { Component, Input, OnDestroy, OnInit } from 'angular2/core';
 import { CanDeactivate, ComponentInstruction, RouteParams, Router, ROUTER_DIRECTIVES } from 'angular2/router';
 import { Subscription } from 'rxjs/Rx';
 
-import { EntityService, ModalService, ToastService } from '../../shared';
-import { Speaker, SpeakerService } from '../../speakers';
+import {
+  EntityService,
+  ModalService,
+  Speaker,
+  SpeakerService,
+  ToastService
+} from '../../shared';
 
 @Component({
   selector: 'ev-speaker',

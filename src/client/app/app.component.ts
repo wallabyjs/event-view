@@ -3,11 +3,20 @@ import { HTTP_PROVIDERS, XHRBackend } from 'angular2/http';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 import 'rxjs/Rx'; // load the full rxjs
 
-import { InMemoryBackendConfig, InMemoryBackendService, SEED_DATA } from 'a2-in-memory-web-api/core';
+import {
+  InMemoryBackendConfig,
+  InMemoryBackendService,
+  SEED_DATA
+} from 'a2-in-memory-web-api/core';
 import { InMemoryStoryService } from '../api/in-memory-story.service';
-import { NavComponent } from './nav';
-import { SpeakerService } from './speakers';
-import { BLOCK_PROVIDERS, ModalComponent, SpinnerComponent, ToastComponent } from './shared';
+import {
+  BLOCK_PROVIDERS,
+  ModalComponent,
+  NavComponent,
+  SpeakerService,
+  SpinnerComponent,
+  ToastComponent
+} from './shared';
 
 @Component({
   selector: 'ev-app',

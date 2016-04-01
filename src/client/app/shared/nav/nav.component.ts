@@ -1,7 +1,7 @@
 import { Component, OnInit } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 
-import { MessageService, ModalService } from '../shared';
+import { MessageService, ModalService } from '../';
 
 class MenuItem {
   constructor(public caption: string, public link: any[]) { }
@@ -9,8 +9,8 @@ class MenuItem {
 
 @Component({
   selector: 'ev-nav',
-  templateUrl: 'app/nav/nav.component.html',
-  styleUrls: ['app/nav/nav.component.css'],
+  templateUrl: 'app/shared/nav/nav.component.html',
+  styleUrls: ['app/shared/nav/nav.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
 export class NavComponent implements OnInit {

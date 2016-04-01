@@ -2,9 +2,8 @@ import { Component, OnDestroy, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { Observable, Subscription } from 'rxjs/Rx';
 
-import { DashboardButtonComponent } from './dashboard-button';
-import { Speaker, SpeakerService } from '../speakers';
-import { ToastService } from '../shared';
+import { DashboardButtonComponent } from './dashboard-button.component';
+import { Speaker, SpeakerService, ToastService } from '../shared';
 
 @Component({
   selector: 'my-dashboard',

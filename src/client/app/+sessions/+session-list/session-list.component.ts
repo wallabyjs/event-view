@@ -3,8 +3,9 @@ import { ROUTER_DIRECTIVES } from 'angular2/router';
 import { Subscription } from 'rxjs/Rx';
 
 import { FilterTextComponent, FilterService } from '../../shared';
-import { Session, SessionService } from '../session';
-import { SessionButtonComponent } from '../session-button';
+import { Session } from '../session.model';
+import { SessionService } from '../session.service';
+import { SessionButtonComponent } from '../session-button.component';
 
 @Component({
   selector: 'ev-sessions',

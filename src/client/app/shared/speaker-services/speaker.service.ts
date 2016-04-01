@@ -2,7 +2,7 @@ import { Injectable } from 'angular2/core';
 import { Http, Response } from 'angular2/http';
 
 import { Speaker } from './';
-import { CONFIG, ExceptionService, MessageService, SpinnerService } from '../shared';
+import { CONFIG, ExceptionService, MessageService, SpinnerService } from '../';
 
 let speakersUrl = CONFIG.baseUrls.speakers;
 

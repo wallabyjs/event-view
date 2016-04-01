@@ -2,9 +2,9 @@ import { Component, OnDestroy, OnInit, ViewChild } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 import { Subscription } from 'rxjs/Rx';
 
-import { Speaker, SpeakerService } from '../../speakers';
-import { SpeakerButtonComponent } from '../speaker-button';
-import { SortSpeakersPipe } from '../sort-pipe';
+import { Speaker, SpeakerService } from '../../shared';
+import { SpeakerButtonComponent } from '../speaker-button.component';
+import { SortSpeakersPipe } from '../sort-speakers.pipe';
 import { FilterService, FilterTextComponent } from '../../shared';
 
 @Component({

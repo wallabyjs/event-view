@@ -5,7 +5,9 @@ export * from './filter-text';
 export * from './init-caps.pipe';
 export * from './message.service';
 export * from './modal';
+export * from './nav';
 export * from './spinner';
+export * from './speaker-services';
 export * from './toast';
 
 import {EntityService} from './entity.service';

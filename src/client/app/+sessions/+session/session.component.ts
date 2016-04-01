@@ -3,7 +3,8 @@ import { CanDeactivate, ComponentInstruction, RouteParams, Router, ROUTER_DIRECT
 import { Subscription } from 'rxjs/Rx';
 
 import { EntityService, ModalService, ToastService } from '../../shared';
-import { Session, SessionService } from '../session';
+import { Session } from '../session.model';
+import { SessionService } from '../session.service';
 
 @Component({
   selector: 'ev-session',

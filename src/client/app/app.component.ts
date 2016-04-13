@@ -19,9 +19,10 @@ import {
 } from '../app/shared';
 
 @Component({
+  moduleId: __moduleName,
   selector: 'ev-app',
-  templateUrl: 'app/app.component.html',
-  styleUrls: ['app/app.component.css'],
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'],
   directives: [ROUTER_DIRECTIVES, ModalComponent, NavComponent, SpinnerComponent, ToastComponent],
   providers: [
     HTTP_PROVIDERS,

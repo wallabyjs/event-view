@@ -2,13 +2,14 @@ import { Component, OnDestroy, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { Observable, Subscription } from 'rxjs/Rx';
 
-import { DashboardButtonComponent } from './shared';
+import { DashboardButtonComponent } from './dashboard-button';
 import { Speaker, SpeakerService, ToastService } from '../../app/shared';
 
 @Component({
+  moduleId: __moduleName,
   selector: 'my-dashboard',
-  templateUrl: 'app/+dashboard/dashboard.component.html',
-  styleUrls: ['app/+dashboard/dashboard.component.css'],
+  templateUrl: 'dashboard.component.html',
+  styleUrls: ['dashboard.component.css'],
   directives: [DashboardButtonComponent]
 })
 export class DashboardComponent implements OnDestroy, OnInit {

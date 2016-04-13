@@ -2,7 +2,7 @@ import { Injectable } from 'angular2/core';
 import { Http, Response } from 'angular2/http';
 
 import { Session } from './session.model';
-import { CONFIG, ExceptionService, MessageService, SpinnerService } from '../../app/shared';
+import { CONFIG, ExceptionService, MessageService, SpinnerService } from '../../../app/shared';
 
 let sessionsUrl = CONFIG.baseUrls.sessions;
 

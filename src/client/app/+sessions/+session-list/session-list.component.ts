@@ -3,15 +3,14 @@ import { ROUTER_DIRECTIVES } from 'angular2/router';
 import { Subscription } from 'rxjs/Rx';
 
 import { FilterTextComponent, FilterService } from '../../../app/shared';
-import { Session } from '../session.model';
-import { SessionService } from '../session.service';
-import { SessionButtonComponent } from '../session-button.component';
+import { Session, SessionService, SessionButtonComponent } from '../shared';
 
 @Component({
+  moduleId: __moduleName,
   selector: 'ev-sessions',
-  templateUrl: 'app/+sessions/+session-list/session-list.component.html',
+  templateUrl: 'session-list.component.html',
   directives: [FilterTextComponent, SessionButtonComponent, ROUTER_DIRECTIVES],
-  styleUrls: ['app/+sessions/+session-list/session-list.component.css']
+  styleUrls: ['session-list.component.css']
 })
 export class SessionListComponent implements OnDestroy, OnInit {
   private _dbResetSubscription: Subscription;

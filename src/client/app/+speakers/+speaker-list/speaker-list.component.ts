@@ -6,10 +6,11 @@ import { FilterService, FilterTextComponent, Speaker, SpeakerService } from '../
 import { SortSpeakersPipe, SpeakerButtonComponent } from '../shared';
 
 @Component({
+  moduleId: __moduleName,
   selector: 'ev-speakers',
-  templateUrl: './app/+speakers/+speaker-list/speaker-list.component.html',
+  templateUrl: 'speaker-list.component.html',
   directives: [SpeakerButtonComponent, FilterTextComponent, ROUTER_DIRECTIVES],
-  styleUrls: ['./app/+speakers/+speaker-list/speaker-list.component.css'],
+  styleUrls: ['speaker-list.component.css'],
   pipes: [SortSpeakersPipe]
 })
 export class SpeakerListComponent implements OnDestroy, OnInit {

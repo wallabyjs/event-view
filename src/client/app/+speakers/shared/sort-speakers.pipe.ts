@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from 'angular2/core';
-import { Speaker } from '../../app/shared';
+import { Speaker } from '../../../app/shared';
 
 @Pipe({ name: 'sortSpeakers' })
 export class SortSpeakersPipe implements PipeTransform {

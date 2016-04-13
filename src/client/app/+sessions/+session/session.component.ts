@@ -3,12 +3,12 @@ import { CanDeactivate, ComponentInstruction, RouteParams, Router, ROUTER_DIRECT
 import { Subscription } from 'rxjs/Rx';
 
 import { EntityService, ModalService, ToastService } from '../../../app/shared';
-import { Session } from '../session.model';
-import { SessionService } from '../session.service';
+import { Session, SessionService } from '../shared';
 
 @Component({
+  moduleId: __moduleName,
   selector: 'ev-session',
-  templateUrl: 'app/+sessions/+session/session.component.html',
+  templateUrl: 'session.component.html',
   styles: ['.mdl-textfield__label {top: 0;}'],
   directives: [ROUTER_DIRECTIVES]
 })

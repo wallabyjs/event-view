@@ -1,7 +1,7 @@
 import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
-import { SessionService } from './session.service';
+import { SessionService } from './shared';
 
 @Component({
   selector: 'ev-sessions-root',

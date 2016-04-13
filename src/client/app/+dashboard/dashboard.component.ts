@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { Observable, Subscription } from 'rxjs/Rx';
 
-import { DashboardButtonComponent } from './dashboard-button.component';
+import { DashboardButtonComponent } from './shared';
 import { Speaker, SpeakerService, ToastService } from '../../app/shared';
 
 @Component({

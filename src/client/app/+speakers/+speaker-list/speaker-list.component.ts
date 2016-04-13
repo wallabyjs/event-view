@@ -3,8 +3,7 @@ import { ROUTER_DIRECTIVES } from 'angular2/router';
 import { Subscription } from 'rxjs/Rx';
 
 import { FilterService, FilterTextComponent, Speaker, SpeakerService } from '../../../app/shared';
-import { SpeakerButtonComponent } from '../speaker-button.component';
-import { SortSpeakersPipe } from '../sort-speakers.pipe';
+import { SortSpeakersPipe, SpeakerButtonComponent } from '../shared';
 
 @Component({
   selector: 'ev-speakers',

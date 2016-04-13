@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from 'angular2/core';
+import { Component, EventEmitter, Output } from 'angular2/core';
 
 @Component({
   selector: 'filter-text',

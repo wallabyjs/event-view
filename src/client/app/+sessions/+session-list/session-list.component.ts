@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit, ViewChild } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 import { Subscription } from 'rxjs/Rx';
 
-import { FilterTextComponent, FilterService } from '../../shared';
+import { FilterTextComponent, FilterService } from '../../../app/shared';
 import { Session } from '../session.model';
 import { SessionService } from '../session.service';
 import { SessionButtonComponent } from '../session-button.component';

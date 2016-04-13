@@ -1,6 +1,6 @@
 import { Component, Input } from 'angular2/core';
 
-import { Speaker } from '../shared';
+import { Speaker } from '../../app/shared';
 
 @Component({
   selector: 'my-dashboard-button',

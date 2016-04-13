@@ -3,8 +3,6 @@ import { Subscription } from 'rxjs/Rx';
 
 import { ISpinnerState, SpinnerService } from './spinner.service';
 
-const ACTIVE_CLASS = 'is-active';
-
 @Component({
   selector: 'ev-spinner',
   template: `

@@ -2,7 +2,7 @@ import { Injectable } from 'angular2/core';
 
 @Injectable()
 export class FilterService {
-	constructor() { }
+  constructor() { }
 
   filter(data: string, props: Array<string>, originalList: Array<any>) {
     let filteredList: any[];
@@ -19,8 +19,7 @@ export class FilterService {
         return match;
       });
       filteredList = filtered;
-    }
-    else {
+    } else {
       filteredList = originalList;
     }
     return filteredList;

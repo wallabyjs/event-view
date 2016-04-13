@@ -2,7 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from 'angular2/core';
 import { CanDeactivate, ComponentInstruction, RouteParams, Router, ROUTER_DIRECTIVES } from 'angular2/router';
 import { Subscription } from 'rxjs/Rx';
 
-import { EntityService, ModalService, ToastService } from '../../shared';
+import { EntityService, ModalService, ToastService } from '../../../app/shared';
 import { Session } from '../session.model';
 import { SessionService } from '../session.service';
 

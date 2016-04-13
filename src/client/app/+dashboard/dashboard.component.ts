@@ -3,7 +3,7 @@ import { Router } from 'angular2/router';
 import { Observable, Subscription } from 'rxjs/Rx';
 
 import { DashboardButtonComponent } from './dashboard-button.component';
-import { Speaker, SpeakerService, ToastService } from '../shared';
+import { Speaker, SpeakerService, ToastService } from '../../app/shared';
 
 @Component({
   selector: 'my-dashboard',

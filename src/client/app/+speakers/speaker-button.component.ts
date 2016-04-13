@@ -1,7 +1,7 @@
 import { Component, Input } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 
-import { Speaker } from '../shared';
+import { Speaker } from '../../app/shared';
 
 @Component({
   selector: 'ev-speaker-button',

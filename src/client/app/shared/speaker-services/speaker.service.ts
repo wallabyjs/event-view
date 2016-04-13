@@ -8,6 +8,8 @@ let speakersUrl = CONFIG.baseUrls.speakers;
 
 @Injectable()
 export class SpeakerService {
+  onDbReset = this._messageService.state;
+
   constructor(private _http: Http,
     private _exceptionService: ExceptionService,
     private _messageService: MessageService,
@@ -48,8 +50,6 @@ export class SpeakerService {
       .catch(this._exceptionService.catchBadResponse)
       .finally(() => this._spinnerService.hide());
   }
-
-  onDbReset = this._messageService.state;
 
   updateSpeaker(speaker: Speaker) {
     let body = JSON.stringify(speaker);

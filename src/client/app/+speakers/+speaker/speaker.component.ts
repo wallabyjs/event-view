@@ -8,7 +8,7 @@ import {
   Speaker,
   SpeakerService,
   ToastService
-} from '../../shared';
+} from '../../../app/shared';
 
 @Component({
   selector: 'ev-speaker',

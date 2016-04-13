@@ -2,7 +2,7 @@ import { Injectable } from 'angular2/core';
 import { Response } from 'angular2/http';
 import { Observable } from 'rxjs/Rx';
 
-import { ToastService } from './toast/toast.service';
+import { ToastService } from './toast';
 
 @Injectable()
 export class ExceptionService {
@@ -16,7 +16,7 @@ export class ExceptionService {
       (err.error ? err.error : JSON.stringify(err)) :
       (res.statusText || 'unknown error');
     this._toastService.activate(`Error - Bad Response - ${emsg}`);
-    //return Observable.throw(emsg); // TODO: We should NOT swallow error here.
+    // return Observable.throw(emsg); // TODO: We should NOT swallow error here.
     return Observable.of();
-  }
+  };
 }

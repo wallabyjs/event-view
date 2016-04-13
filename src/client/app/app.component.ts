@@ -16,7 +16,7 @@ import {
   SpeakerService,
   SpinnerComponent,
   ToastComponent
-} from './shared';
+} from '../app/shared';
 
 @Component({
   selector: 'ev-app',

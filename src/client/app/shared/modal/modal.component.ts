@@ -1,6 +1,6 @@
 import { Component, OnInit } from 'angular2/core';
 
-import { ModalService } from './modal.service'
+import { ModalService } from './modal.service';
 
 const KEY_ESC = 27;
 
@@ -55,19 +55,25 @@ export class ModalComponent implements OnInit {
   private _show() {
     document.onkeyup = null;
 
-    if (!this._modalElement || !this._cancelButton || !this._okButton) return;
+    if (!this._modalElement || !this._cancelButton || !this._okButton) {
+      return;
+    }
 
     this._modalElement.style.opacity = 0;
     this._modalElement.style.zIndex = 9999;
 
     this._cancelButton.onclick = ((e: any) => {
       e.preventDefault();
-      if (!this.negativeOnClick(e)) this._hideDialog()
+      if (!this.negativeOnClick(e)) {
+        this._hideDialog();
+      }
     });
 
     this._okButton.onclick = ((e: any) => {
       e.preventDefault();
-      if (!this.positiveOnClick(e)) this._hideDialog()
+      if (!this.positiveOnClick(e)) {
+        this._hideDialog();
+      }
     });
 
     this._modalElement.onclick = () => {
@@ -76,7 +82,7 @@ export class ModalComponent implements OnInit {
     };
 
     document.onkeyup = (e: any) => {
-      if (e.which == KEY_ESC) {
+      if (e.which === KEY_ESC) {
         this._hideDialog();
         return this.negativeOnClick(null);
       }

@@ -1,6 +1,8 @@
 import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
+import { SessionComponent } from './session';
+import { SessionListComponent } from './session-list';
 import { SessionService } from './shared';
 
 @Component({
@@ -13,21 +15,18 @@ import { SessionService } from './shared';
   {
     path: '/',
     name: 'Sessions',
-    loader: () => window['System'].import('app/+sessions/+session-list')
-      .then((module: any) => module.SessionListComponent),
+    component: SessionListComponent,
     useAsDefault: true
   },
   {
     path: '/list/:id',
     name: 'Sessions',
-    loader: () => window['System'].import('app/+sessions/+session-list')
-      .then((module: any) => module.SessionListComponent)
+    component: SessionListComponent,
   },
   {
     path: '/:id',
     name: 'Session',
-    loader: () => window['System'].import('app/+sessions/+session')
-      .then((module: any) => module.SessionComponent)
+    component: SessionComponent
    }
 ])
 export class SessionsComponent { }

@@ -1,6 +1,9 @@
 import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
+import { SpeakerComponent } from './speaker';
+import { SpeakerListComponent } from './speaker-list';
+
 @Component({
   selector: 'ev-speakers-root',
   template: `
@@ -12,19 +15,16 @@ import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
   {
     path: '/',
     name: 'Speakers',
-    loader: () => window['System'].import('app/+speakers/+speaker-list')
-      .then((module: any) => module.SpeakerListComponent),
+    component: SpeakerListComponent,
     useAsDefault: true
   }, {
     path: '/list/:id',
     name: 'Speakers',
-    loader: () => window['System'].import('app/+speakers/+speaker-list')
-      .then((module: any) => module.SpeakerListComponent)
+    component: SpeakerListComponent
   }, {
     path: '/:id',
     name: 'Speaker',
-    loader: () => window['System'].import('app/+speakers/+speaker')
-      .then((module: any) => module.SpeakerComponent)
+    component: SpeakerComponent
   }
 ])
 export class SpeakersComponent { }

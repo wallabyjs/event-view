@@ -1,5 +1,6 @@
 **/*.map
 src/client/app/**/*.js
+!src/client/app/assets/*.js
 src/client/api/**/*.js
 #src/client/in-memory-backend/**/*.js
 dist

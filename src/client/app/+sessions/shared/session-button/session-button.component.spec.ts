@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { DashboardComponent } from './dashboard.component';
-import { Router } from 'angular2/router';
-import { SpeakerService, ToastService } from '../../app/shared';
+import { SessionButtonComponent } from './session-button.component';
 
 import {
   it,
@@ -33,28 +31,21 @@ interface Done {
 
 ////////  SPECS  /////////////
 
-describe('DashboardComponent Smoke test', () => {
+
+describe('SessionButtonComponent Smoke test', () => {
   it('should run a passing test', () => {
     expect(true).toEqual(true, 'should pass');
   });
 });
 
-describe('DashboardComponent', function () {
-  beforeEachProviders(() => [
-    provide(Router, { useValue: {} }),
-    provide(SpeakerService, {
-      useValue: {
-        getSpeakers: () => { },
-        onDbReset: () => { }
-    }}),
-    ToastService
-  ]);
+describe('SessionButtonComponent', function () {
+  beforeEachProviders((): any => []);
 
   it('should instantiate component',
     injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
 
-      return tcb.createAsync(DashboardComponent).then(fixture => {
-        expect(fixture.componentInstance instanceof DashboardComponent).toBe(true, 'should create DashboardComponent');
+      return tcb.createAsync(SessionButtonComponent).then(fixture => {
+        expect(fixture.componentInstance instanceof SessionButtonComponent).toBe(true, 'should create SessionButtonComponent');
       });
     }));
 

@@ -1,7 +1,8 @@
 /* tslint:disable:no-unused-variable */
-import { DashboardComponent } from './dashboard.component';
-import { Router } from 'angular2/router';
-import { SpeakerService, ToastService } from '../../app/shared';
+import { SessionComponent } from './session.component';
+import { RouteParams, Router } from 'angular2/router';
+import { EntityService, ModalService, ToastService } from '../../../app/shared';
+import { Session, SessionService } from '../shared';
 
 import {
   it,
@@ -33,28 +34,28 @@ interface Done {
 
 ////////  SPECS  /////////////
 
-describe('DashboardComponent Smoke test', () => {
+
+describe('SessionComponent Smoke test', () => {
   it('should run a passing test', () => {
     expect(true).toEqual(true, 'should pass');
   });
 });
 
-describe('DashboardComponent', function () {
-  beforeEachProviders(() => [
+describe('SessionComponent', function () {
+  beforeEachProviders((): any => [
+    RouteParams,
     provide(Router, { useValue: {} }),
-    provide(SpeakerService, {
-      useValue: {
-        getSpeakers: () => { },
-        onDbReset: () => { }
-    }}),
-    ToastService
+    EntityService,
+    ModalService,
+    SessionService,
+    ToastService,
   ]);
 
   it('should instantiate component',
     injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
 
-      return tcb.createAsync(DashboardComponent).then(fixture => {
-        expect(fixture.componentInstance instanceof DashboardComponent).toBe(true, 'should create DashboardComponent');
+      return tcb.createAsync(SessionComponent).then(fixture => {
+        expect(fixture.componentInstance instanceof SessionComponent).toBe(true, 'should create SessionComponent');
       });
     }));
 

@@ -38,7 +38,7 @@ describe('DashboardButtonComponent Smoke test', () => {
   });
 });
 
-describe('DashboardButtonComponent', function () {
+describe('DashboardButtonComponent', () => {
   beforeEachProviders((): any => []);
 
   it('should instantiate component',

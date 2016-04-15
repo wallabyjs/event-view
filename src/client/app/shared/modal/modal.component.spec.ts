@@ -38,7 +38,7 @@ describe('ModalComponent Smoke test', () => {
   });
 });
 
-describe('ModalComponent', function () {
+describe('ModalComponent', () => {
   beforeEachProviders(() => [
     ModalService
   ]);

@@ -69,7 +69,7 @@ describe('SessionService Smoke test', () => {
   });
 });
 
-describe('SessionService', function () {
+describe('SessionService', () => {
 
   beforeEachProviders((): any => [
     HTTP_PROVIDERS,

@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { SessionButtonComponent } from './session-button.component';
+import { InitCapsPipe } from './init-caps.pipe';
 
 import {
   it,
@@ -31,22 +31,33 @@ interface Done {
 
 ////////  SPECS  /////////////
 
-
-describe('SessionButtonComponent Smoke test', () => {
+describe('InitCapsPipe Smoke test', () => {
   it('should run a passing test', () => {
     expect(true).toEqual(true, 'should pass');
   });
 });
 
-describe('SessionButtonComponent',  () => {
-  beforeEachProviders((): any => []);
+describe('InitCapsPipe', () => {
+  let pipe: InitCapsPipe;
 
-  it('should instantiate component',
-    injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
+  beforeEach(() => {
+    pipe = new InitCapsPipe();
+  });
 
-      return tcb.createAsync(SessionButtonComponent).then(fixture => {
-        expect(fixture.componentInstance instanceof SessionButtonComponent).toBe(true, 'should create SessionButtonComponent');
-      });
-    }));
+  it('transforms "john" to "John"', () => {
+    expect(pipe.transform('john')).toEqual('John');
+  });
+
+  it('transforms "john papa" to "John Papa"', () => {
+    expect(pipe.transform('john papa')).toEqual('John Papa');
+  });
+
+  it('leaves "John Papa" unchanged', () => {
+    expect(pipe.transform('John Papa')).toEqual('John Papa');
+  });
+
+  it('transforms "johnpapa" to "Johnpapa"', () => {
+    expect(pipe.transform('johnpapa')).toEqual('Johnpapa');
+  });
 
 });

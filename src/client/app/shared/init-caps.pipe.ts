@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from 'angular2/core';
 
 @Pipe({ name: 'initCaps' })
 export class InitCapsPipe implements PipeTransform {
-  transform(value: string, args: any[]) {
+  transform(value: string) { // , args: any[]) {
     return value
       .toLowerCase()
       .replace(/(?:^|\s)[a-z]/g, function(m) {

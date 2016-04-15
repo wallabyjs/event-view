@@ -39,7 +39,7 @@ describe('DashboardComponent Smoke test', () => {
   });
 });
 
-describe('DashboardComponent', function () {
+describe('DashboardComponent',  () => {
   beforeEachProviders(() => [
     provide(Router, { useValue: {} }),
     provide(SpeakerService, {

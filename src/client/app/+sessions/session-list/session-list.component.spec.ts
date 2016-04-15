@@ -39,7 +39,7 @@ describe('SessionListComponent Smoke test', () => {
   });
 });
 
-describe('SessionListComponent', function () {
+describe('SessionListComponent',  () => {
   beforeEachProviders((): any => [
     FilterService,
     provide(SessionService, {

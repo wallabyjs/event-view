@@ -41,7 +41,7 @@ describe('SessionComponent Smoke test', () => {
   });
 });
 
-describe('SessionComponent', function () {
+describe('SessionComponent', () => {
   beforeEachProviders((): any => [
     RouteParams,
     provide(Router, { useValue: {} }),

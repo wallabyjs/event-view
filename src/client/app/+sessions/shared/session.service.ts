@@ -38,15 +38,23 @@ export class SessionService {
   getSessions() {
     this._spinnerService.show();
     return this._http.get(sessionsUrl)
-      .map((response: Response) => <Session[]>response.json().data)
+      .map(this._extractData)
       .catch(this._exceptionService.catchBadResponse)
       .finally(() => this._spinnerService.hide());
+  }
+
+  private _extractData(res: Response) {
+    if (res.status < 200 || res.status >= 300) {
+      throw new Error('Bad response status: ' + res.status);
+    }
+    let body = res.json();
+    return body.data || { };
   }
 
   getSession(id: number) {
     this._spinnerService.show();
     return this._http.get(`${sessionsUrl}/${id}`)
-      .map((response: Response) => response.json().data)
+      .map(this._extractData)
       .catch(this._exceptionService.catchBadResponse)
       .finally(() => this._spinnerService.hide());
   }

@@ -50,8 +50,18 @@ interface Done {
   fail: (err: any) => void;
 }
 
-////////  SPECS  /////////////
+type SessionData = { id: string, name: string, level: string }
 
+const makeSessionData = () => <SessionData[]>[
+  { 'id': '1', 'name': 'Windstorm', 'level': undefined },
+  { 'id': '2', 'name': 'Bombasto', 'level': undefined },
+  { 'id': '3', 'name': 'Magneta', 'level': undefined },
+  { 'id': '4', 'name': 'Tornado', 'level': undefined }
+];
+
+// const makeResponseData = (data: {}) => {return { data }; };
+
+////////  SPECS  /////////////
 
 describe('SessionService Smoke test', () => {
   it('should run a passing test', () => {
@@ -61,15 +71,11 @@ describe('SessionService Smoke test', () => {
 
 describe('SessionService', function () {
 
-  beforeEachProviders(() => [
-    HTTP_PROVIDERS,
-    provide(XHRBackend, { useClass: MockBackend })
-  ]);
-
   beforeEachProviders((): any => [
-    provide(Http, { useValue: { get: () => { } } }),
+    HTTP_PROVIDERS,
+    provide(XHRBackend, { useClass: MockBackend }),
     provide(ExceptionService, { useValue: { catchBadResponse: () => { } } }),
-    provide(MessageService, { useValue: { resetDb: () => { }, state: { subscribe: () => { }} } }),
+    provide(MessageService, { useValue: { resetDb: () => { }, state: { subscribe: () => { } } } }),
     provide(SpinnerService, { useValue: { hide: () => { }, show: () => { } } }),
   ]);
 
@@ -94,4 +100,68 @@ describe('SessionService', function () {
       expect(backend).not.toBeNull('backend should be provided');
     }));
 
+  describe('when getSessions', () => {
+    let backend: MockBackend;
+    let service: SessionService;
+    let fakeSessions: SessionData[];
+    let response: Response;
+
+    beforeEach(inject([Http, XHRBackend, ExceptionService, MessageService, SpinnerService],
+      (http: Http, be: MockBackend, ex: ExceptionService, msg: MessageService, spin: SpinnerService) => {
+        backend = be;
+        service = new SessionService(http, ex, msg, spin);
+        fakeSessions = makeSessionData();
+        let options = new ResponseOptions({ status: 200, body: { data: fakeSessions } });
+        response = new Response(options);
+      }));
+
+
+    it('should have expected fake sessions (then)', injectAsync([], () => {
+      backend.connections.subscribe((c: MockConnection) => c.mockRespond(response));
+
+      return service.getSessions().toPromise()
+        // .then(() => Promise.reject('deliberate'))
+        .then(session => {
+          expect(session.length).toEqual(fakeSessions.length,
+            'should have expected no. of session');
+        });
+    }));
+
+    it('should have expected fake sessions (Observable.do)', injectAsync([], () => {
+      backend.connections.subscribe((c: MockConnection) => c.mockRespond(response));
+
+      return service.getSessions()
+        .do(sessions => {
+          expect(sessions.length).toEqual(fakeSessions.length,
+            'should have expected no. of sessions');
+        })
+        .toPromise();
+    }));
+
+    it('should be OK returning no sessions', injectAsync([], () => {
+      let resp = new Response(new ResponseOptions({ status: 200, body: { data: [] } }));
+      backend.connections.subscribe((c: MockConnection) => c.mockRespond(resp));
+
+      return service.getSessions()
+        .do(sessions => {
+          expect(sessions.length).toEqual(0, 'should have no sessions');
+        })
+        .toPromise();
+    }));
+
+    it('should treat 404 as an Observable error', injectAsync([], () => {
+      let resp = new Response(new ResponseOptions({ status: 404, body: { data: [] } }));
+      backend.connections.subscribe((c: MockConnection) => c.mockRespond(resp));
+
+      return service.getSessions()
+        .do(sessions => {
+          fail('should not respond with sessions');
+        })
+        .catch(err => {
+          expect(err).toMatch(/Bad response status/, 'should catch bad response status code');
+          return Observable.of(null); // failure is the expected test result
+        })
+        .toPromise();
+    }));
+  });
 });

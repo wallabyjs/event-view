@@ -1,6 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { ModalComponent } from './modal.component';
-import { ModalService } from './modal.service';
+import { DashboardComponent } from './dashboard.component';
 
 import {
   it,
@@ -32,22 +31,32 @@ interface Done {
 
 ////////  SPECS  /////////////
 
-describe('ModalComponent Smoke test', () => {
+
+import { Router } from 'angular2/router';
+import { SpeakerService, ToastService } from '../../app/shared';
+
+describe('DashboardComponent Smoke test', () => {
   it('should run a passing test', () => {
     expect(true).toEqual(true, 'should pass');
   });
 });
 
-describe('ModalComponent', function () {
+describe('DashboardComponent', function () {
   beforeEachProviders(() => [
-    ModalService
+    provide(Router, { useValue: {} }),
+    provide(SpeakerService, {
+      useValue: {
+        getSpeakers: () => { },
+        onDbReset: () => { }
+    }}),
+    ToastService
   ]);
 
   it('should instantiate component',
     injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
 
-      return tcb.createAsync(ModalComponent).then(fixture => {
-        expect(fixture.componentInstance instanceof ModalComponent).toBe(true, 'should create ModalComponent');
+      return tcb.createAsync(DashboardComponent).then(fixture => {
+        expect(fixture.componentInstance instanceof DashboardComponent).toBe(true, 'should create DashboardComponent');
       });
     }));
 

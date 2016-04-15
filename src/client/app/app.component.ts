@@ -23,7 +23,13 @@ import {
   selector: 'ev-app',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [ROUTER_DIRECTIVES, ModalComponent, NavComponent, SpinnerComponent, ToastComponent],
+  directives: [
+    ROUTER_DIRECTIVES,
+    ModalComponent,
+    NavComponent,
+    SpinnerComponent,
+    ToastComponent
+  ],
   providers: [
     HTTP_PROVIDERS,
     provide(XHRBackend, { useClass: InMemoryBackendService }),

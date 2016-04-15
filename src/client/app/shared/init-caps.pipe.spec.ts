@@ -60,4 +60,12 @@ describe('InitCapsPipe', () => {
     expect(pipe.transform('johnpapa')).toEqual('Johnpapa');
   });
 
+  it('transforms "john-papa" to "John-papa"', () => {
+    expect(pipe.transform('john-papa')).toEqual('John-papa');
+  });
+
+  it('transforms "   john   papa" to "   John   Papa" (preserves spaces) ', () => {
+    expect(pipe.transform('   john   papa')).toEqual('   John   Papa');
+  });
+
 });

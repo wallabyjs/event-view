@@ -1,7 +1,8 @@
 module.exports = function (config) {
 
-  var appBase = 'app/';     // transpiled app JS files
-  var appAssets = 'base/app/'; // component assets fetched by Angular's compiler
+  var apiBase = 'src/client/api/';     // transpiled app JS files
+  var appBase = 'src/client/app/';     // transpiled app JS files
+  var appAssets = 'base/src/client/app/'; // component assets fetched by Angular's compiler
 
   config.set({
     basePath: '',
@@ -24,6 +25,7 @@ module.exports = function (config) {
     files: [
       // Angular and shim libraries loaded by Karma
       { pattern: 'node_modules/systemjs/dist/system-polyfills.js', included: true, watched: true },
+      { pattern: 'src/client/app/assets/material.min.js', included: true, watched: true },
       { pattern: 'node_modules/systemjs/dist/system.src.js', included: true, watched: true },
       { pattern: 'node_modules/es6-shim/es6-shim.js', included: true, watched: true },
       { pattern: 'node_modules/angular2/bundles/angular2-polyfills.js', included: true, watched: true },
@@ -38,6 +40,12 @@ module.exports = function (config) {
 
       // Configures module loader w/ app and specs, then launch karma
       { pattern: 'karma-test-shim.js', included: true, watched: true },
+
+
+      // transpiled api files
+      { pattern: apiBase + '**/*.js', included: false, watched: true },
+      { pattern: apiBase + '**/*.ts', included: false, watched: false },
+      { pattern: apiBase + '**/*.js.map', included: false, watched: false },
 
       // transpiled application & spec code paths loaded via module imports
       { pattern: appBase + '**/*.js', included: false, watched: true },

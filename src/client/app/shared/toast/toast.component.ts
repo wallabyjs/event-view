@@ -3,9 +3,10 @@ import { Component, OnInit } from 'angular2/core';
 import { ToastService } from './toast.service';
 
 @Component({
+  moduleId: __moduleName,
   selector: 'toast',
-  templateUrl: 'app/shared/toast/toast.component.html',
-  styleUrls: ['app/shared/toast/toast.component.css']
+  templateUrl: 'toast.component.html',
+  styleUrls: ['toast.component.css']
 })
 export class ToastComponent implements OnInit {
   private _defaults = {

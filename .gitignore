@@ -10,8 +10,14 @@ jspm_packages
 bower_components
 typings
 
-!**/*e2e-spec.js
+#tests
+!**/*.e2e.js
 _test-output
+_temp
+
+#!**/*e2e-spec.js
+#!karma*.js
+#!protractor*.js
 
 plnkr.html
 #plnkr.no-link.html

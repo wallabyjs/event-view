@@ -8,9 +8,10 @@ class MenuItem {
 }
 
 @Component({
+  moduleId: __moduleName,
   selector: 'ev-nav',
-  templateUrl: 'app/shared/nav/nav.component.html',
-  styleUrls: ['app/shared/nav/nav.component.css'],
+  templateUrl: 'nav.component.html',
+  styleUrls: ['nav.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
 export class NavComponent implements OnInit {

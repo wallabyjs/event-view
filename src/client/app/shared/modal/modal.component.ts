@@ -5,9 +5,10 @@ import { ModalService } from './modal.service';
 const KEY_ESC = 27;
 
 @Component({
+  moduleId: __moduleName,
   selector: 'modal-confirm',
-  templateUrl: 'app/shared/modal/modal.component.html',
-  styleUrls: ['app/shared/modal/modal.component.css']
+  templateUrl: 'modal.component.html',
+  styleUrls: ['modal.component.css']
 })
 export class ModalComponent implements OnInit {
   private _defaults = {

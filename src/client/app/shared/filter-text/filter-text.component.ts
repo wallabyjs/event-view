@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Output } from 'angular2/core';
 
 @Component({
+  moduleId: __moduleName,
   selector: 'filter-text',
-  templateUrl: 'app/shared/filter-text/filter-text.component.html'
+  templateUrl: 'filter-text.component.html'
 })
 export class FilterTextComponent {
   @Output() changed: EventEmitter<string>;

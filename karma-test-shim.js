@@ -10,18 +10,64 @@
   __karma__.loaded = function () { };
 
   // SET THE RUNTIME APPLICATION ROOT HERE
-  var appRoot = 'app'; // no trailing slash!
+  var appRoot = 'src/client/app'; // no trailing slash!
+  var apiRoot = 'src/client/api'; // no trailing slash!
 
   // RegExp for client application base path within karma (which always starts 'base\')
   var karmaBase = '^\/base\/'; // RegEx string for base of karma folders
   var appPackage = 'base/' + appRoot; //e.g., base/app
+  var apiPackage = 'base/' + apiRoot; //e.g., base/api
+  var apiRootRe = new RegExp(karmaBase + apiRoot + '\/');
   var appRootRe = new RegExp(karmaBase + appRoot + '\/');
+  var onlyApiFilesRe = new RegExp(karmaBase + apiRoot + '\/(?!.*\.spec\.js$)([a-z0-9-_\.\/]+)\.js$');
   var onlyAppFilesRe = new RegExp(karmaBase + appRoot + '\/(?!.*\.spec\.js$)([a-z0-9-_\.\/]+)\.js$');
 
   var moduleNames = [];
 
   // Configure systemjs packages to use the .js extension for imports from the app folder
-  var packages = {};
+  var packages = [
+    '+dashboard',
+    '+dashboard/dashboard-button',
+    '+sessions',
+    '+sessions/session',
+    '+sessions/session-list',
+    '+sessions/shared',
+    '+sessions/shared/session-button',
+    '+speakers',
+    '+speakers/speaker',
+    '+speakers/speaker-list',
+    '+speakers/shared',
+    '+speakers/shared/speaker-button',
+    'shared',
+    'shared/filter-text',
+    'shared/modal',
+    'shared/nav',
+    'shared/speaker-services',
+    'shared/spinner',
+    'shared/toast',
+    'speakers',
+  ].reduce(function(barrelConfig, barrelName) {
+    barrelConfig[appPackage + '/' + barrelName] = {
+      format: 'register',
+      defaultExtension: 'js',
+      main: 'index'
+    };
+    return barrelConfig;
+  }, {});
+
+  packages[apiPackage] = {
+    format: 'register',
+    defaultExtension: 'js',
+    map: Object.keys(window.__karma__.files)
+      .filter(onlyApiFiles)
+      .reduce(function (pathsMapping, apiPath) {
+        var moduleName = apiPath.replace(apiRootRe, './').replace(/\.js$/, '');
+        console.log(moduleName);
+        pathsMapping[moduleName] = apiPath + '?' + window.__karma__.files[apiPath];
+        return pathsMapping;
+      }, {})
+  }; // Added for api
+
   packages[appPackage] = {
     defaultExtension: false,
     format: 'register',
@@ -68,6 +114,10 @@
     .then(success, fail);
 
   ////// Helpers //////
+
+  function onlyApiFiles(filePath) {
+    return onlyApiFilesRe.test(filePath);
+  }
 
   function onlyAppFiles(filePath) {
     return onlyAppFilesRe.test(filePath);

@@ -48,7 +48,7 @@ describe('AppComponent', function () {
       });
     }));
 
-  it('should have expected <h1> text',
+  xit('should have expected <h1> text',
     injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
 
       return tcb.createAsync(AppComponent).then(fixture => {

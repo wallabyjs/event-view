@@ -41,7 +41,6 @@ module.exports = function (config) {
       // Configures module loader w/ app and specs, then launch karma
       { pattern: 'karma-test-shim.js', included: true, watched: true },
 
-
       // transpiled api files
       { pattern: apiBase + '**/*.js', included: false, watched: true },
       { pattern: apiBase + '**/*.ts', included: false, watched: false },

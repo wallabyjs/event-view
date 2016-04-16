@@ -14,6 +14,7 @@ typings
 !**/*.e2e.js
 _test-output
 _temp
+src/client/test-help/**/*.js
 
 #!**/*e2e-spec.js
 #!karma*.js

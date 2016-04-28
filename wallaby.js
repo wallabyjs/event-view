@@ -7,6 +7,7 @@ module.exports = function (wallaby) {
       { pattern: 'node_modules/es6-shim/es6-shim.js', instrument: false },
       { pattern: 'node_modules/systemjs/dist/system-polyfills.js', instrument: false },
       { pattern: 'node_modules/angular2/bundles/angular2-polyfills.js', instrument: false },
+      { pattern: 'node_modules/zone.js/dist/async-test.js', instrument: false },
       { pattern: 'node_modules/systemjs/dist/system.js', instrument: false },
       { pattern: 'node_modules/rxjs/bundles/Rx.js', instrument: false },
       { pattern: 'node_modules/angular2/bundles/angular2.dev.js', instrument: false },
